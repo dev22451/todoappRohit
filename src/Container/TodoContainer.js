@@ -12,6 +12,7 @@ class TodoContainer extends React.Component{
         this.handleOnTodoName = this.handleOnTodoName.bind(this);
         this.handleAddTodo = this.handleAddTodo.bind(this);
         this.handleCheck=this.handleCheck.bind(this);
+        // this.handleClickInput=this.handleClickInput.bind(this);
     
     }
     handleAddTodo(){
@@ -40,6 +41,7 @@ class TodoContainer extends React.Component{
             todoList:refList
         })
     }
+
      render(){
         const {todoList,todoName} = this.state;
 
@@ -50,7 +52,7 @@ class TodoContainer extends React.Component{
                 handleAddTodo={this.handleAddTodo}
                 handleOnTodoName={this.handleOnTodoName}
             />
-            <TodoList todoList={todoList} handleCheck={this.handleCheck}/>
+            <TodoList todoList={todoList} handleCheck={this.handleCheck} handleClickInput={this.handleClickInput}/>
             </div>
         )
     }
