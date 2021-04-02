@@ -1,3 +1,4 @@
+import { AiFillDelete } from 'react-icons/ai';
 const TodoList = (props) => {
     const {todoList , handleCheck,handleOnRemove} = props;
     return (
@@ -7,10 +8,10 @@ const TodoList = (props) => {
                     const {name , isCompleted} = list
                     return(
                         <div className="todolist">
-                            <input type="checkbox" checked={isCompleted} onChange={()=>{handleCheck(index)}}/>
+                            <input type="checkbox" checked={isCompleted} onChange={()=>{handleCheck(index)}} className="checkbox"/>
                             {name}
-                            {isCompleted===true && <span float-right> Completed</span>}
-                            <button onClick={()=>{handleOnRemove(index)}}>X</button>
+                            {isCompleted===true && <span style={{float:"right"}}> Completed</span>}
+                            <span style={{float:"right"}} onClick={()=>{handleOnRemove(index)}}><AiFillDelete/></span>
                         </div>
                 )
             })
