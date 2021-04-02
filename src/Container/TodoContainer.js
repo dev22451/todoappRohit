@@ -7,11 +7,13 @@ class TodoContainer extends React.Component{
         this.state={
             todoName:'',
             todoList:[],
+            isCompleted:false
         }
 
         this.handleOnTodoName = this.handleOnTodoName.bind(this);
         this.handleAddTodo = this.handleAddTodo.bind(this);
         this.handleCheck=this.handleCheck.bind(this);
+        this.handleOnRemove=this.handleOnRemove.bind(this);
     
     }
     handleAddTodo(){
@@ -35,11 +37,23 @@ class TodoContainer extends React.Component{
 
         handleCheck(index){
         let refList = this.state.todoList;
+        if(!refList[index].isCompleted)
         refList[index].isCompleted=true
+        else
+        refList[index].isCompleted=false
         this.setState({
             todoList:refList
         })
     }
+
+    handleOnRemove(index){
+        let refList = this.state.todoList;
+        refList.splice(index,1);
+        this.setState({
+            todoList:refList
+        })
+    }
+
      render(){
         const {todoList,todoName} = this.state;
 
@@ -50,7 +64,7 @@ class TodoContainer extends React.Component{
                 handleAddTodo={this.handleAddTodo}
                 handleOnTodoName={this.handleOnTodoName}
             />
-            <TodoList todoList={todoList} handleCheck={this.handleCheck}/>
+            <TodoList todoList={todoList} handleCheck={this.handleCheck} handleOnRemove={this.handleOnRemove}/>
             </div>
         )
     }

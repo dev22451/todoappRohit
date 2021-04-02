@@ -1,5 +1,5 @@
 const TodoList = (props) => {
-    const {todoList , handleCheck} = props;
+    const {todoList , handleCheck,handleOnRemove} = props;
     return (
         <div>
             {
@@ -9,7 +9,8 @@ const TodoList = (props) => {
                         <div className="todolist">
                             <input type="checkbox" checked={isCompleted} onChange={()=>{handleCheck(index)}}/>
                             {name}
-                            {isCompleted===true && <span> Completed</span>}
+                            {isCompleted===true && <span float-right> Completed</span>}
+                            <button onClick={()=>{handleOnRemove(index)}}>X</button>
                         </div>
                 )
             })
