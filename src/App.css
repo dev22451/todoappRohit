@@ -1,10 +1,15 @@
 .App {
   text-align: center;
 }
+
 .App h3{
 color: red;
+font-style: inherit;
 }
-
+.todolist{
+  border: 1px solid black;
+  width: 100%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -38,4 +43,17 @@ color: red;
   to {
     transform: rotate(360deg);
   }
+}
+
+.first{
+  margin: 0% 30% 0% 30%;
+}
+.TodoInput{
+  width:100%;
+}
+.TodoInput input {
+  width:80%;
+}
+.TodoInput button{
+  width:20%;
 }

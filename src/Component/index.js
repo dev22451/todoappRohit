@@ -1,3 +1,4 @@
 import AddTodoInput from './AddTodoInput';
+import TodoList from './TodoList';
 
-export default AddTodoInput
+export {AddTodoInput,TodoList}
