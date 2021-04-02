@@ -25,3 +25,7 @@ font-style: inherit;
 .TodoInput button{
   width:20%;
 }
+
+.checkbox{
+  float: left;
+}
