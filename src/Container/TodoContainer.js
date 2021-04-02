@@ -7,6 +7,7 @@ class TodoContainer extends React.Component{
         this.state={
             todoName:'',
             todoList:[],
+            isCompleted:false
         }
 
         this.handleOnTodoName = this.handleOnTodoName.bind(this);
@@ -36,7 +37,10 @@ class TodoContainer extends React.Component{
 
         handleCheck(index){
         let refList = this.state.todoList;
+        if(!refList[index].isCompleted)
         refList[index].isCompleted=true
+        else
+        refList[index].isCompleted=false
         this.setState({
             todoList:refList
         })
