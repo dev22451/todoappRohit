@@ -1,7 +1,7 @@
 const AddTodoInput = (props) => {
 const {handleAddTodo,handleOnTodoName,todoName}=props;
     return (
-        <div>
+        <div className="TodoInput">
             <input type="text"
             value={todoName}
              placeholder="Enter Todo" 

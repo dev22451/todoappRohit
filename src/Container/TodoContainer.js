@@ -7,18 +7,19 @@ class TodoContainer extends React.Component{
         this.state={
             todoName:'',
             todoList:[],
-           
         }
 
         this.handleOnTodoName = this.handleOnTodoName.bind(this);
         this.handleAddTodo = this.handleAddTodo.bind(this);
-       
+        this.handleCheck=this.handleCheck.bind(this);
+    
     }
     handleAddTodo(){
         const{todoList,todoName}=this.state;
         let refTodoList = todoList;
         refTodoList.push({
             name:todoName,
+            isCompleted:false
         })
         this.setState({
             todoList:refTodoList,
@@ -32,7 +33,13 @@ class TodoContainer extends React.Component{
         })
     }
 
-    
+        handleCheck(index){
+        let refList = this.state.todoList;
+        refList[index].isCompleted=true
+        this.setState({
+            todoList:refList
+        })
+    }
      render(){
         const {todoList,todoName} = this.state;
 
@@ -43,7 +50,7 @@ class TodoContainer extends React.Component{
                 handleAddTodo={this.handleAddTodo}
                 handleOnTodoName={this.handleOnTodoName}
             />
-            <TodoList todoList={todoList} />
+            <TodoList todoList={todoList} handleCheck={this.handleCheck}/>
             </div>
         )
     }

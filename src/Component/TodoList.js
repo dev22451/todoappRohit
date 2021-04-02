@@ -1,13 +1,15 @@
 const TodoList = (props) => {
-    const {todoList} = props;
+    const {todoList , handleCheck} = props;
     return (
         <div>
             {
                 todoList.map((list,index) => {
-                    const {name} = list
+                    const {name , isCompleted} = list
                     return(
                         <div className="todolist">
+                            <input type="checkbox" checked={isCompleted} onChange={()=>{handleCheck(index)}}/>
                             {name}
+                            {isCompleted===true && <span> Completed</span>}
                         </div>
                 )
             })
