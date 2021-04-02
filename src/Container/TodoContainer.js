@@ -19,10 +19,18 @@ class TodoContainer extends React.Component{
     handleAddTodo(){
         const{todoList,todoName}=this.state;
         let refTodoList = todoList;
+        let len=todoName.length;
+        if(len>=5){
         refTodoList.push({
             name:todoName,
             isCompleted:false
         })
+    }
+    else{
+        return(
+        <div>Max</div>
+        );
+    }
         this.setState({
             todoList:refTodoList,
             todoName:''

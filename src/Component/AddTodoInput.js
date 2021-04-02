@@ -3,7 +3,6 @@ const {handleAddTodo,handleOnTodoName,todoName}=props;
     return (
         <div className="TodoInput">
             <input type="text"
-            min="5"
             value={todoName}
              placeholder="Enter Todo" 
             onChange={handleOnTodoName}
