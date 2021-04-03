@@ -27,12 +27,13 @@ class TodoContainer extends React.Component{
             isCompleted:false
         })
     }
-        else{
+         else{
             this.setState({
                 error:" * please add more then five cheracter"
             })
            
         }
+        
         this.setState({
             todoList:refTodoList,
             todoName:''
