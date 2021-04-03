@@ -10,8 +10,8 @@ const TodoList = (props) => {
                         <div className="todolist">
                             <input type="checkbox" checked={isCompleted} onChange={()=>{handleCheck(index)}} className="checkbox"/>
                             {name}
-                            <span style={{float:"right" ,marginRight:"10px"}} onClick={()=>{handleOnRemove(index)}}><AiFillDelete/></span>
-                            {isCompleted===true && <span style={{float:"right",background:"blue",border:"1px solid black"}}> Completed</span>}
+                            {isCompleted===true && <span style={{float:"right" ,marginRight:"10px"}} onClick={()=>{handleOnRemove(index)}}><AiFillDelete/></span>}
+                            {isCompleted===true && <span style={{float:"right",background:"blue",border:"1px solid black",borderRadius:"5px"}}> Completed</span>}
                         </div>
                 )
             })
