@@ -1,31 +1,57 @@
-.App {
+.main {
   text-align: center;
+  margin: 4% 30% 0% 30%;
+  background:linear-gradient(60deg,rgb(15, 129, 145),rgb(59, 110, 104));
+  padding: 10px 25px 10px 25px;
+  border-radius: 10px;
 }
 
-.App h3{
-color: red;
-font-style: inherit;
+.main h3{
+color: #FF7F50;
+font-size: 35px;
 }
 .todolist{
   border: 1px solid black;
   width: 100%;
+  background-color:  #FF7F50;
+  height: 30px;
+  padding-left: 5px;
+  padding-top: 5px;
+  border-radius: 15px ;
+  margin: 15px 0px;
+  color: white;
+  border: none;
 }
 
 
 
-.first{
+/* .first{
   margin: 0% 30% 0% 30%;
-}
+  background:linear-gradient(60deg,rgb(15, 129, 145),rgb(59, 110, 104));
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+} */
 .TodoInput{
   width:100%;
 }
 .TodoInput input {
-  width:78%;
+  width:76%;
+  height: 30px;
+  border-radius: 15px 0px 0px 15px;
+  outline: none;
+  padding-left: 10px;
+  border-color:#FF7F50;
 }
 .TodoInput button{
   width:20%;
+  height: 36px;
+  border-radius: 0px 15px 15px 0px;
+  outline: none;
+  background-color:  #FF7F50;
+  font-weight: bold;
+  color: white;
+  border: none;
 }
-
 .checkbox{
   float: left;
 }

@@ -4,9 +4,11 @@ import TodoContainer from './Container/TodoContainer';
 
 function App(){
   return(
-    <div className="App">
-    <h3>Todo App</h3>
-    <TodoContainer/>
+    <div>
+      <div className="main">
+      <h3>Todo App</h3>
+      <TodoContainer/>
+      </div>
     </div>
   )
 }

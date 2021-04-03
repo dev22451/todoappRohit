@@ -7,7 +7,8 @@ class TodoContainer extends React.Component{
         this.state={
             todoName:'',
             todoList:[],
-            isCompleted:false
+            isCompleted:false,
+            error:'',
         }
 
         this.handleOnTodoName = this.handleOnTodoName.bind(this);
@@ -19,18 +20,19 @@ class TodoContainer extends React.Component{
     handleAddTodo(){
         const{todoList,todoName}=this.state;
         let refTodoList = todoList;
-        let len=todoName.length;
-        if(len>=5){
+        
+        if(todoName.length>=5){
         refTodoList.push({
             name:todoName,
             isCompleted:false
         })
     }
-    else{
-        return(
-        <div>Max</div>
-        );
-    }
+        else{
+            this.setState({
+                error:" * please add more then five cheracter"
+            })
+           
+        }
         this.setState({
             todoList:refTodoList,
             todoName:''
@@ -63,7 +65,7 @@ class TodoContainer extends React.Component{
     }
 
      render(){
-        const {todoList,todoName} = this.state;
+        const {todoList,todoName,error} = this.state;
 
         return(
             <div className="first">
@@ -71,6 +73,7 @@ class TodoContainer extends React.Component{
                 todoName = {todoName}
                 handleAddTodo={this.handleAddTodo}
                 handleOnTodoName={this.handleOnTodoName}
+                error={error}
             />
             <TodoList todoList={todoList} handleCheck={this.handleCheck} handleOnRemove={this.handleOnRemove}/>
             </div>
